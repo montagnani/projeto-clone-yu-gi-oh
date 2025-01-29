@@ -3,6 +3,22 @@ const btnAvancar = document.getElementById("btn-avancar");
 const btnVoltar = document.getElementById("btn-voltar");
 const cartoes = document.querySelectorAll(".cartao");
 let cartaoAtual = 0;
+
+cartoes.forEach(cartao => {
+  cartao.addEventListener("click", function() {
+ const cartaVirada = cartao.querySelector(".carta-virada");
+
+ //virar o cartao
+   cartao.classList.toggle("virar");
+ //mostrar o fundo da carta 
+ cartaVirada.classList.toggle("mostrar-fundo-carta");
+
+ const descricao = cartao.querySelector(".descricao")
+ descricao.classList.toggle("esconder");
+  });
+  
+});
+
 //passo2
 btnAvancar.addEventListener("click", function () {
 
